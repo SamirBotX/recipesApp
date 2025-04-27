@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recipe Finder</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <h1><i class="fas fa-utensils"></i> Recipe Finder</h1>
+      <p>Discover delicious recipes based on ingredients you have!</p>
+    </header>
+
+    <main>
+      <section class="search-section">
+        <div class="search-container">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Enter ingredients (e.g., chicken, tomatoes, onions)"
+          />
+          <button id="search-btn"><i class="fas fa-search"></i> Search</button>
+        </div>
+        <div class="filters">
+          <select id="diet-filter">
+            <option value="">Any Diet</option>
+            <option value="balanced">Balanced</option>
+            <option value="high-protein">High-Protein</option>
+            <option value="low-carb">Low-Carb</option>
+            <option value="low-fat">Low-Fat</option>
+          </select>
+          <select id="meal-type">
+            <option value="">Any Meal Type</option>
+            <option value="Breakfast">Breakfast</option>
+            <option value="Lunch">Lunch</option>
+            <option value="Dinner">Dinner</option>
+            <option value="Snack">Snack</option>
+            <option value="Teatime">Teatime</option>
+          </select>
+        </div>
+      </section>
+
+      <section class="results-section">
+        <div id="loading" class="hidden">
+          <div class="spinner"></div>
+          <p>Finding delicious recipes...</p>
+        </div>
+        <div id="error-message" class="hidden"></div>
+        <div id="results-container"></div>
+      </section>
+    </main>
+
+    <div id="recipe-modal" class="modal hidden">
+      <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div id="modal-recipe-content"></div>
+      </div>
+    </div>
+
+    <footer>
+      <p>Made with <i class="fas fa-heart"></i> for food lovers</p>
+      <p>Powered by Spoonacular API</p>
+    </footer>
+
+    <script src="config.js"></script>
+    <script type="module" src="script.js"></script>
+  </body>
+</html>
